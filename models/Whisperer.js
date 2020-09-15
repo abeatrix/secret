@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const WhispererSchema = new mongoose.Schema(
     {
         username: {type: String, required: [true, 'you must provide a username.']},
-        timestamps: true,,
+        birthday: {type: String, required: true, default: Date.now},
     }
 )
 

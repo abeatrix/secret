@@ -1,9 +1,9 @@
 // HUB FOR MODELS AND DB CONNECTIONS
 
 const mongoose = require('mongoose');
-const connectionString = 'mongodb://localhost:27017/reddit-db';
+const connectionString = 'mongodb://localhost:27017/secret-db';
 
-mongoose.connect(connectionString. {
+mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,

@@ -3,10 +3,16 @@ const app = express();
 
 const PORT = 4000;
 
+const contollers = require('./controllers');
+const methodOverride = require('method-override');
+
 // SERVER LISTENER
 app.listen(PORT, () => {
     console.log(`Listening for secrets on port ${PORT}`);
 });
+
+
+app.set('view engine', 'ejs')
 
 // 404
 app.use({}, ()=> {
