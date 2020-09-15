@@ -19,6 +19,21 @@ router.post('/', (req, res) => {
     });
 });
 
+//SHOW ROUTE
+router.get('/:i', (req, res) => {
+
+    db.Redditor.findById(req.params.i, (err, oneWhisperer) => {
+        if(err){
+            console.log(err);
+        }else{
+            res.render('user.ejs' {
+                whisperer: oneWhisperer,
+            })
+        }
+    })
+})
+
+
 // INDEX ROUTE
 router.get('/', (req, res) => {
 
