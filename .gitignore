@@ -1,1 +1,4 @@
 node_modules
+
+views/secret/index copy.ejs
+views/partials/nav 2.ejs
