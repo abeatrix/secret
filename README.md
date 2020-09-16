@@ -14,3 +14,9 @@ An anonymous message board.
 * Bootstrap
 * node.js
 * express.js
+* express sessions
+
+### WIP
+* user login
+* comment session
+* dates display
