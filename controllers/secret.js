@@ -4,17 +4,17 @@ const db = require('../models');
 
 // NEW ROUTE
 router.get('/post', (req, res) => {
-    res.render('secret/new');
+    res.render('secret/post');
 })
 
 // CREATE ROUTE
 router.post('/', (req, res) => {
 
-    db.Secret.create(req.body, (err, newUser) => {
+    db.Secret.create(req.body, (err, newPost) => {
         if(err){
             console.log(err);
         }else {
-            console.log(newUser)
+            console.log(newPost)
             res.redirect('/secret');
         }
     });
@@ -27,7 +27,7 @@ router.get('/:i', (req, res) => {
         if(err){
             console.log(err);
         }else{
-            res.render('secret/user', {
+            res.render('secret/secret', {
                 oneSecret: dbSecret,
             })
         }

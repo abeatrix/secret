@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 app.set('view engine', 'ejs')
 
 app.use('/whisperer', controllers.whisperer)
-
+app.use('/secret', controllers.secret)
 
 
 // SERVER LISTENER

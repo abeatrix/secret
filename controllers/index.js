@@ -1,3 +1,4 @@
 module.exports = {
-    whisperer: require('./whisperer')
+    whisperer: require('./whisperer'),
+    secret: require('./secret'),
 }

@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
             console.log(err);
         }else {
             console.log(newUser)
-            res.redirect('/secret');
+            res.redirect('/whisperer');
         }
     });
 });
@@ -38,12 +38,12 @@ router.get('/:i', (req, res) => {
 // INDEX ROUTE
 router.get('/', (req, res) => {
 
-    db.Whisperer.find({}, (err, foundWhisperer) => {
+    db.Whisperer.find({}, (err, allWhisperer) => {
         if(err){
             console.log(err);
         }else {
             res.render('whisperer/index', {
-                whisperers: foundWhisperer
+                whisperers: allWhisperer
             })
         }
     })
