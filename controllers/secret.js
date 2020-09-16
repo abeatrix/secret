@@ -3,14 +3,14 @@ const router = express.Router();
 const db = require('../models');
 
 // NEW ROUTE
-router.get('/signup', (req, res) => {
-    res.render('whisperer/new');
+router.get('/post', (req, res) => {
+    res.render('secret/new');
 })
 
 // CREATE ROUTE
 router.post('/', (req, res) => {
 
-    db.Whisperer.create(req.body, (err, newUser) => {
+    db.Secret.create(req.body, (err, newUser) => {
         if(err){
             console.log(err);
         }else {
@@ -23,12 +23,12 @@ router.post('/', (req, res) => {
 //SHOW ROUTE
 router.get('/:i', (req, res) => {
 
-    db.Whisperer.findById(req.params.i, (err, oneWhispererDB) => {
+    db.Secret.findById(req.params.i, (err, dbSecret) => {
         if(err){
             console.log(err);
         }else{
-            res.render('whisperer/user', {
-                oneWhisperer: oneWhispererDB,
+            res.render('secret/user', {
+                oneSecret: dbSecret,
             })
         }
     })
@@ -38,12 +38,12 @@ router.get('/:i', (req, res) => {
 // INDEX ROUTE
 router.get('/', (req, res) => {
 
-    db.Whisperer.find({}, (err, foundWhisperer) => {
+    db.Secret.find({}, (err, allSecret) => {
         if(err){
             console.log(err);
         }else {
-            res.render('whisperer/index', {
-                whisperers: foundWhisperer
+            res.render('secret/index', {
+                secrets: allSecret
             })
         }
     })

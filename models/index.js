@@ -27,3 +27,7 @@ mongoose.connection.on('error', () => {
 module.exports = {
     Whisperer: require('./Whisperer.js')
 }
+
+module.exports = {
+    Secret: require('./Secret.js')
+}
