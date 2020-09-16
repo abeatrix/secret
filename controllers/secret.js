@@ -51,4 +51,17 @@ router.get('/', (req, res) => {
 });
 
 
+// DELETE ROUTE
+router.delete('/:i', (req, res) => {
+
+    db.Secret.findByIdAndDelete(req.params.i, (err, deletedSecret) => {
+        if(err){
+            console.log(err)
+        } else{
+            console.log(deletedSecret);
+            res.redirect('/secret')
+        }
+    })
+})
+
 module.exports = router;
