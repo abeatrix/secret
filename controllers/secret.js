@@ -64,4 +64,31 @@ router.delete('/:i', (req, res) => {
     })
 })
 
+//EDIT ROUTE
+router.get('/:i/edit', (req, res) => {
+
+    db.Secret.findById(req.params.i, (err, dbSecret) => {
+        if(err){
+            console.log(err)
+        } else{
+            res.render('secret/edit', {
+                oneSecret: dbSecret,
+            })
+        }
+    })
+})
+
+// UPDATE ROUTE
+router.put('/:i', (req, res) => {
+
+    db.Secret.findByIdAndUpdate(req.params.i, req.body, {new: true}, (err, updatedSecret) => {
+        if(err){
+            console.log(err)
+        }else{
+            console.log(updatedSecret);
+            res.redirect(`/secret/${req.params.i}`)
+        }
+    })
+})
+
 module.exports = router;
