@@ -7,7 +7,10 @@ const SecretSchema = new mongoose.Schema(
         date: {type: String, required: true, default: Date.now},
         likes: {type: Number, required: true, default: 1},
     },
-    { timestamps: { createdAt: 'created_at' } }
+    {
+        timestamps: true,
+        createdAt: "publishedAt",
+    } // going to add createdAt, updatedAt
 )
 
 const Secret = mongoose.model('Secret', SecretSchema);

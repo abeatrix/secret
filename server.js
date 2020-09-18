@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const path = require('path');
 
 //INTERNAL MODULES
-const PORT = 4000;
+const PORT = 3500;
 
 //INSTANCED MODULES
 const app = express();

@@ -10,7 +10,10 @@ const WhispererSchema = new mongoose.Schema(
         password: {type: String, required: true},
         createdAt: {type: Number, required: true, default: Date.now},
     },
-    { timestamps: { createdAt: 'created_at' } }
+    {
+        timestamps: true,
+        createdAt: "publishedAt",
+    } // going to add createdAt, updatedAt
 )
 
 const Whisperer = mongoose.model('Whisperer', WhispererSchema);
